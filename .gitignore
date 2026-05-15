@@ -1,0 +1,32 @@
+# Build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# FFmpeg binary (too large, download separately)
+ffmpeg-8.1.1-essentials_build/
+
+# Config files
+config.json
+*.log
+
+# Test files
+test*.txt
+test*.py
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
