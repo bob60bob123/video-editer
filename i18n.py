@@ -154,6 +154,18 @@ _strings = {
         "language": "语言:",
         "chinese": "简体中文",
         "english": "English",
+
+        # 预览相关
+        "preview": "预览",
+        "output_preview": "输出预览",
+        "select_preview": "选择并预览",
+
+        # 轨道相关
+        "track_video": "视频轨道",
+        "track_audio": "音频轨道",
+        "track_watermark": "水印轨道",
+        "timeline": "时间轴",
+        "processing_progress": "处理进度",
     },
 
     LANG_EN: {
@@ -303,6 +315,18 @@ _strings = {
         "language": "Language:",
         "chinese": "简体中文",
         "english": "English",
+
+        # 预览相关
+        "preview": "Preview",
+        "output_preview": "Output Preview",
+        "select_preview": "Select and Preview",
+
+        # 轨道相关
+        "track_video": "Video Track",
+        "track_audio": "Audio Track",
+        "track_watermark": "Watermark Track",
+        "timeline": "Timeline",
+        "processing_progress": "Processing Progress",
     }
 }
 

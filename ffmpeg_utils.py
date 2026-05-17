@@ -485,8 +485,8 @@ class FFmpegUtils:
         # 需要手动对文本内容进行 FFmpeg filter 语法转义
         text_file = None
         try:
-            # 对文本进行 escape：单引号替换为 \'，反斜杠替换为 \\
-            text_escaped = text.replace("\\", "\\\\").replace("'", "\\'")
+# 对文本进行 escape：换行、回车、冒号需要转义，单引号和反斜杠也要处理
+            text_escaped = text.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r").replace(":", "\\:")
             with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', suffix='.txt', delete=False) as f:
                 f.write(text)
                 text_file = f.name

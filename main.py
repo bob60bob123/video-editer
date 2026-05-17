@@ -101,6 +101,229 @@ class VideoEditorWindow(QMainWindow):
         except Exception:
             pass
 
+
+    def _get_stylesheet(self):
+        """获取现代化样式表"""
+        return """
+            /* 全局样式 */
+            QMainWindow {
+                background-color: #1e1e2e;
+                color: #cdd6f4;
+            }
+            QWidget {
+                background-color: #1e1e2e;
+                color: #cdd6f4;
+                font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+                font-size: 10pt;
+            }
+
+            /* 标签页样式 */
+            QTabWidget::pane {
+                border: 1px solid #313244;
+                border-radius: 8px;
+                background-color: #181825;
+                padding: 10px;
+            }
+            QTabBar::tab {
+                background-color: #313244;
+                color: #a6adc8;
+                padding: 10px 20px;
+                margin-right: 4px;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+            QTabBar::tab:selected {
+                background-color: #cba6f7;
+                color: #1e1e2e;
+                font-weight: bold;
+            }
+            QTabBar::tab:hover:!selected {
+                background-color: #45475a;
+            }
+
+            /* 按钮样式 */
+            QPushButton {
+                background-color: #313244;
+                color: #cdd6f4;
+                border: none;
+                border-radius: 6px;
+                padding: 8px 16px;
+                min-width: 70px;
+            }
+            QPushButton:hover {
+                background-color: #45475a;
+            }
+            QPushButton:pressed {
+                background-color: #585b70;
+            }
+            QPushButton:disabled {
+                background-color: #313244;
+                color: #6c7086;
+            }
+
+            /* 主要按钮 */
+            QPushButton[objectName="primary"] {
+                background-color: #89b4fa;
+                color: #1e1e2e;
+                font-weight: bold;
+            }
+            QPushButton[objectName="primary"]:hover {
+                background-color: #b4befe;
+            }
+
+            /* 输入框样式 */
+            QLineEdit, QComboBox, QSpinBox, QDoubleSpinBox {
+                background-color: #313244;
+                color: #cdd6f4;
+                border: 1px solid #45475a;
+                border-radius: 6px;
+                padding: 6px 10px;
+            }
+            QLineEdit:focus, QComboBox:focus {
+                border: 2px solid #89b4fa;
+            }
+            QComboBox::drop-down {
+                border: none;
+                width: 20px;
+            }
+            QComboBox::down-arrow {
+                image: none;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #a6adc8;
+            }
+
+            /* 列表样式 */
+            QListWidget {
+                background-color: #181825;
+                border: 1px solid #313244;
+                border-radius: 8px;
+                padding: 5px;
+                outline: none;
+            }
+            QListWidget::item {
+                padding: 6px;
+                border-radius: 4px;
+                margin: 2px 0;
+            }
+            QListWidget::item:selected {
+                background-color: #89b4fa;
+                color: #1e1e2e;
+            }
+            QListWidget::item:hover:!selected {
+                background-color: #313244;
+            }
+
+            /* 分组框样式 */
+            QGroupBox {
+                font-weight: bold;
+                border: 1px solid #45475a;
+                border-radius: 8px;
+                margin-top: 10px;
+                padding-top: 10px;
+            }
+            QGroupBox::title {
+                subcontrol-origin: margin;
+                left: 10px;
+                padding: 0 5px;
+                color: #cba6f7;
+            }
+
+            /* 滑块样式 */
+            QSlider::groove:horizontal {
+                height: 6px;
+                background-color: #313244;
+                border-radius: 3px;
+            }
+            QSlider::handle:horizontal {
+                width: 14px;
+                height: 14px;
+                background-color: #89b4fa;
+                border-radius: 7px;
+                margin: -4px 0;
+            }
+            QSlider::sub-page:horizontal {
+                background-color: #89b4fa;
+                border-radius: 3px;
+            }
+
+            /* 标签样式 */
+            QLabel {
+                color: #cdd6f4;
+            }
+
+            /* 进度条样式 */
+            QProgressBar {
+                border: none;
+                border-radius: 6px;
+                background-color: #313244;
+                text-align: center;
+                color: #cdd6f4;
+            }
+            QProgressBar::chunk {
+                background-color: #89b4fa;
+                border-radius: 6px;
+            }
+
+            /* 滚动条样式 */
+            QScrollBar:vertical {
+                width: 10px;
+                background-color: #1e1e2e;
+            }
+            QScrollBar::handle:vertical {
+                background-color: #45475a;
+                border-radius: 5px;
+                min-height: 30px;
+            }
+            QScrollBar::handle:vertical:hover {
+                background-color: #585b70;
+            }
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+                height: 0px;
+            }
+            QScrollBar:horizontal {
+                height: 10px;
+                background-color: #1e1e2e;
+            }
+            QScrollBar::handle:horizontal {
+                background-color: #45475a;
+                border-radius: 5px;
+                min-width: 30px;
+            }
+            QScrollBar::handle:horizontal:hover {
+                background-color: #585b70;
+            }
+            QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+                width: 0px;
+            }
+
+            /* 菜单样式 */
+            QMenu {
+                background-color: #1e1e2e;
+                border: 1px solid #313244;
+                border-radius: 6px;
+                padding: 5px;
+            }
+            QMenu::item {
+                padding: 8px 25px;
+                border-radius: 4px;
+            }
+            QMenu::item:selected {
+                background-color: #313244;
+            }
+            QMenuBar {
+                background-color: #1e1e2e;
+            }
+            QMenuBar::item {
+                padding: 6px 12px;
+            }
+            QMenuBar::item:selected {
+                background-color: #313244;
+                border-radius: 4px;
+            }
+        """
+
+
     def _add_output_history(self, path):
         """添加输出目录到历史"""
         folder = os.path.dirname(path)
@@ -217,6 +440,7 @@ class VideoEditorWindow(QMainWindow):
         """初始化界面"""
         self.setWindowTitle(T("app_title", self.lang))
         self.setGeometry(100, 100, 900, 700)
+        self.setStyleSheet(self._get_stylesheet())
 
         # 中央部件
         if self.centralWidget():
@@ -385,6 +609,7 @@ class VideoEditorWindow(QMainWindow):
         self.audio_info_label = QLabel("")
         self.audio_info_label.setStyleSheet("color: gray;")
         audio_layout.addWidget(self.audio_info_label)
+
         audio_group.setLayout(audio_layout)
         layout.addWidget(audio_group)
 
